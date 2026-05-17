@@ -1,6 +1,7 @@
 // @flow strict
 
 import { personalData } from "@/utils/data/personal-data";
+import Image from "next/image";
 import Link from "next/link";
 import { BsGithub } from "react-icons/bs";
 import { FaTelegramPlane } from "react-icons/fa";
@@ -9,14 +10,22 @@ import { MdDownload } from "react-icons/md";
 
 function HeroSection() {
   return (
-    <section className="relative overflow-hidden rounded-lg mb-16 border border-[#1b2c68a0] bg-[#0b1022]">
-      <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(22,242,179,0.09),transparent_35%,rgba(236,72,153,0.08)_72%,transparent)]" />
-      <div className="relative grid min-h-[520px] grid-cols-1 items-center gap-10 px-5 py-10 sm:px-10 lg:grid-cols-[1fr_0.8fr] lg:px-12">
+    <section className="relative mb-16 flex flex-col items-center justify-between overflow-hidden py-4 lg:py-12">
+      <Image
+        src="/hero.svg"
+        alt=""
+        width={1572}
+        height={795}
+        priority
+        className="absolute -top-[98px] left-1/2 -z-10 w-[140vw] max-w-none -translate-x-1/2 opacity-100"
+      />
+
+      <div className="grid min-h-[520px] grid-cols-1 items-center gap-10 py-10 lg:grid-cols-[1fr_0.8fr]">
         <div>
           <p className="mb-3 text-sm font-semibold uppercase text-[#16f2b3]">
             {personalData.designation}
           </p>
-          <h1 className="text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+          <h1 className="text-4xl font-black leading-tight text-white sm:text-5xl lg:text-7xl">
             {personalData.name}
           </h1>
           <p className="mt-5 max-w-xl text-sm leading-7 text-gray-200 sm:text-base">
