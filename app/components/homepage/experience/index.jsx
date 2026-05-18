@@ -65,6 +65,15 @@ function Experience() {
                           <p className="text-sm sm:text-base">
                             {experience.company}
                           </p>
+                          {experience.responsibilities?.length > 0 && (
+                            <ul className="mt-4 flex flex-col gap-2 text-xs sm:text-sm text-gray-300">
+                              {experience.responsibilities.map((item) => (
+                                <li key={item} className="leading-6">
+                                  {item}
+                                </li>
+                              ))}
+                            </ul>
+                          )}
                         </div>
                       </div>
                     </div>
